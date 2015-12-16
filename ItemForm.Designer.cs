@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.monCalendar = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,10 +36,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtItem = new System.Windows.Forms.TextBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryDataSet = new AccountBook.CategoryDataSet();
             this.txtMoney = new System.Windows.Forms.TextBox();
             this.txtRemarks = new System.Windows.Forms.TextBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // monCalendar
@@ -92,12 +97,24 @@
             // 
             // cmbCategory
             // 
+            this.cmbCategory.DataSource = this.categoryDataSet;
+            this.cmbCategory.DisplayMember = "CategoryDataSet.分類";
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(270, 15);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(141, 20);
             this.cmbCategory.TabIndex = 6;
+            // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.categoryDataSet;
+            // 
+            // categoryDataSet
+            // 
+            this.categoryDataSet.DataSetName = "CategoryDataSet";
+            this.categoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtMoney
             // 
@@ -151,6 +168,8 @@
             this.Controls.Add(this.monCalendar);
             this.Name = "ItemForm";
             this.Text = "登録";
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +188,7 @@
         private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private CategoryDataSet categoryDataSet;
     }
 }
