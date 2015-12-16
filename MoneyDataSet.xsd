@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MoneyDataSet" targetNamespace="http://tempuri.org/MoneyDataSet.xsd" xmlns:mstns="http://tempuri.org/MoneyDataSet.xsd" xmlns="http://tempuri.org/MoneyDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MoneyDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MoneyDataSet" msprop:Generator_UserDSName="MoneyDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="moneyDataTable" msprop:Generator_TableClassName="moneyDataTableDataTable" msprop:Generator_TableVarName="tablemoneyDataTable" msprop:Generator_TablePropName="moneyDataTable" msprop:Generator_RowDeletingName="moneyDataTableRowDeleting" msprop:Generator_RowChangingName="moneyDataTableRowChanging" msprop:Generator_RowEvHandlerName="moneyDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="moneyDataTableRowDeleted" msprop:Generator_UserTableName="moneyDataTable" msprop:Generator_RowChangedName="moneyDataTableRowChanged" msprop:Generator_RowEvArgName="moneyDataTableRowChangeEvent" msprop:Generator_RowClassName="moneyDataTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="日付" msprop:Generator_ColumnVarNameInTable="column日付" msprop:Generator_ColumnPropNameInRow="日付" msprop:Generator_ColumnPropNameInTable="日付Column" msprop:Generator_UserColumnName="日付" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="分類" msprop:Generator_ColumnVarNameInTable="column分類" msprop:Generator_ColumnPropNameInRow="分類" msprop:Generator_ColumnPropNameInTable="分類Column" msprop:Generator_UserColumnName="分類" type="xs:string" minOccurs="0" />
+              <xs:element name="品名" msprop:Generator_ColumnVarNameInTable="column品名" msprop:Generator_ColumnPropNameInRow="品名" msprop:Generator_ColumnPropNameInTable="品名Column" msprop:Generator_UserColumnName="品名" type="xs:string" minOccurs="0" />
+              <xs:element name="金額" msprop:Generator_ColumnVarNameInTable="column金額" msprop:Generator_ColumnPropNameInRow="金額" msprop:Generator_ColumnPropNameInTable="金額Column" msprop:Generator_UserColumnName="金額" type="xs:int" minOccurs="0" />
+              <xs:element name="備考" msprop:Generator_ColumnVarNameInTable="column備考" msprop:Generator_ColumnPropNameInRow="備考" msprop:Generator_ColumnPropNameInTable="備考Column" msprop:Generator_UserColumnName="備考" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
