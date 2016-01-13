@@ -44,5 +44,20 @@ namespace AccountBook
             categoryDataSet._CategoryDataSet.AddCategoryDataSetRow("雑費", "出金");
             categoryDataSet._CategoryDataSet.AddCategoryDataSetRow("住居", "出金");
         }
+
+        private void addAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddData();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonEnd_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

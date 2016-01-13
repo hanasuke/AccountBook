@@ -33,9 +33,9 @@
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.保存SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.追加AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.変更CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.削除DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.表示VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,7 +83,7 @@
             this.ファイルToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.保存SToolStripMenuItem,
             this.toolStripSeparator1,
-            this.終了ToolStripMenuItem});
+            this.exitToolStripMenuItem});
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
             this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.ファイルToolStripMenuItem.Text = "ファイル(&F)";
@@ -91,46 +91,48 @@
             // 保存SToolStripMenuItem
             // 
             this.保存SToolStripMenuItem.Name = "保存SToolStripMenuItem";
-            this.保存SToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.保存SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.保存SToolStripMenuItem.Text = "保存(&S)";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(110, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
-            // 終了ToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.終了ToolStripMenuItem.Text = "終了(&X)";
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "終了(&X)";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // 編集ToolStripMenuItem
             // 
             this.編集ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.追加AToolStripMenuItem,
+            this.addAToolStripMenuItem,
             this.変更CToolStripMenuItem,
             this.削除DToolStripMenuItem});
             this.編集ToolStripMenuItem.Name = "編集ToolStripMenuItem";
             this.編集ToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.編集ToolStripMenuItem.Text = "編集(&E)";
             // 
-            // 追加AToolStripMenuItem
+            // addAToolStripMenuItem
             // 
-            this.追加AToolStripMenuItem.Name = "追加AToolStripMenuItem";
-            this.追加AToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.追加AToolStripMenuItem.Text = "追加(&A)";
+            this.addAToolStripMenuItem.Name = "addAToolStripMenuItem";
+            this.addAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addAToolStripMenuItem.Text = "追加(&A)";
+            this.addAToolStripMenuItem.Click += new System.EventHandler(this.addAToolStripMenuItem_Click);
             // 
             // 変更CToolStripMenuItem
             // 
             this.変更CToolStripMenuItem.Name = "変更CToolStripMenuItem";
-            this.変更CToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.変更CToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.変更CToolStripMenuItem.Text = "変更(&C)";
             // 
             // 削除DToolStripMenuItem
             // 
             this.削除DToolStripMenuItem.Name = "削除DToolStripMenuItem";
-            this.削除DToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.削除DToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.削除DToolStripMenuItem.Text = "削除(&D)";
             // 
             // 表示VToolStripMenuItem
@@ -261,6 +263,7 @@
             this.buttonEnd.TabIndex = 5;
             this.buttonEnd.Text = "終了";
             this.buttonEnd.UseVisualStyleBackColor = true;
+            this.buttonEnd.Click += new System.EventHandler(this.buttonEnd_Click);
             // 
             // moneyDataSetBindingSource
             // 
@@ -310,9 +313,9 @@
         private System.Windows.Forms.ToolStripMenuItem ファイルToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 保存SToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem 終了ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 編集ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 追加AToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 変更CToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 削除DToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 表示VToolStripMenuItem;
