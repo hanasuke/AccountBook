@@ -169,17 +169,17 @@
 
         #endregion
 
-        private System.Windows.Forms.MonthCalendar monCalendar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtItem;
-        private System.Windows.Forms.ComboBox cmbCategory;
-        private System.Windows.Forms.TextBox txtMoney;
-        private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button button1;
         private CategoryDataSet categoryDataSet;
+        public System.Windows.Forms.MonthCalendar monCalendar;
+        public System.Windows.Forms.TextBox txtItem;
+        public System.Windows.Forms.ComboBox cmbCategory;
+        public System.Windows.Forms.TextBox txtMoney;
+        public System.Windows.Forms.TextBox txtRemarks;
     }
 }

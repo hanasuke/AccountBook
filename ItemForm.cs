@@ -12,16 +12,17 @@ namespace AccountBook
 {
     public partial class ItemForm : Form
     {
-        public ItemForm()
+        public ItemForm(CategoryDataSet argCategoryDataSet)
         {
             InitializeComponent();
+            categoryDataSet.Merge(argCategoryDataSet);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("regist button clicked");
-            ItemForm frmItem = new ItemForm();
-            DialogResult DrRet = frmItem.ShowDialog();
         }
+
+        public MoneyDataSet.moneyDataTableRow monCalender { get; set; }
     }
 }
