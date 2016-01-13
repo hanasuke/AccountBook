@@ -17,7 +17,7 @@ namespace AccountBook
             InitializeComponent();
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void AddData()
         {
             ItemForm frmItem = new ItemForm(categoryDataSet);
             DialogResult drRet = frmItem.ShowDialog();
@@ -30,6 +30,11 @@ namespace AccountBook
                     int.Parse(frmItem.txtMoney.Text),
                     frmItem.txtRemarks.Text);
             }
+        } 
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            AddData();
         }
 
         private void Form1_Load(object sender, EventArgs e)
