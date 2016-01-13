@@ -16,5 +16,12 @@ namespace AccountBook
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("regist button clicked");
+            ItemForm frmItem = new ItemForm();
+            DialogResult DrRet = frmItem.ShowDialog();
+        }
     }
 }
