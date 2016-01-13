@@ -19,8 +19,25 @@ namespace AccountBook
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            ItemForm frmItem = new ItemForm();
+            ItemForm frmItem = new ItemForm(categoryDataSet);
             DialogResult drRet = frmItem.ShowDialog();
+            if (drRet == DialogResult.OK)
+            {
+                moneyDataSet.moneyDataTable.AddmoneyDataTableRow(
+                    frmItem.monCalendar.SelectionRange.Start,
+                    frmItem.cmbCategory.Text,
+                    frmItem.txtItem.Text,
+                    int.Parse(frmItem.txtMoney.Text),
+                    frmItem.txtRemarks.Text);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            categoryDataSet._CategoryDataSet.AddCategoryDataSetRow("給料", "入金");
+            categoryDataSet._CategoryDataSet.AddCategoryDataSetRow("食費", "出金");
+            categoryDataSet._CategoryDataSet.AddCategoryDataSetRow("雑費", "出金");
+            categoryDataSet._CategoryDataSet.AddCategoryDataSetRow("住居", "出金");
         }
     }
 }

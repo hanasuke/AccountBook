@@ -56,11 +56,13 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonEnd = new System.Windows.Forms.Button();
             this.moneyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryDataSet = new AccountBook.CategoryDataSet();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -89,18 +91,18 @@
             // 保存SToolStripMenuItem
             // 
             this.保存SToolStripMenuItem.Name = "保存SToolStripMenuItem";
-            this.保存SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.保存SToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.保存SToolStripMenuItem.Text = "保存(&S)";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(110, 6);
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.終了ToolStripMenuItem.Text = "終了(&X)";
             // 
             // 編集ToolStripMenuItem
@@ -116,19 +118,19 @@
             // 追加AToolStripMenuItem
             // 
             this.追加AToolStripMenuItem.Name = "追加AToolStripMenuItem";
-            this.追加AToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.追加AToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.追加AToolStripMenuItem.Text = "追加(&A)";
             // 
             // 変更CToolStripMenuItem
             // 
             this.変更CToolStripMenuItem.Name = "変更CToolStripMenuItem";
-            this.変更CToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.変更CToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.変更CToolStripMenuItem.Text = "変更(&C)";
             // 
             // 削除DToolStripMenuItem
             // 
             this.削除DToolStripMenuItem.Name = "削除DToolStripMenuItem";
-            this.削除DToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.削除DToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.削除DToolStripMenuItem.Text = "削除(&D)";
             // 
             // 表示VToolStripMenuItem
@@ -143,13 +145,13 @@
             // 一覧表示LToolStripMenuItem
             // 
             this.一覧表示LToolStripMenuItem.Name = "一覧表示LToolStripMenuItem";
-            this.一覧表示LToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.一覧表示LToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.一覧表示LToolStripMenuItem.Text = "一覧表示(&L)";
             // 
             // 集計表示SToolStripMenuItem
             // 
             this.集計表示SToolStripMenuItem.Name = "集計表示SToolStripMenuItem";
-            this.集計表示SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.集計表示SToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.集計表示SToolStripMenuItem.Text = "集計表示(&S)";
             // 
             // ヘルプHToolStripMenuItem
@@ -265,6 +267,11 @@
             this.moneyDataSetBindingSource.DataSource = this.moneyDataSet;
             this.moneyDataSetBindingSource.Position = 0;
             // 
+            // categoryDataSet
+            // 
+            this.categoryDataSet.DataSetName = "CategoryDataSet";
+            this.categoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -279,12 +286,14 @@
             this.MainMenuStrip = this.mainMenu;
             this.Name = "Form1";
             this.Text = "簡易家計簿";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,6 +328,7 @@
         private System.Windows.Forms.BindingSource moneyDataTableBindingSource;
         private MoneyDataSet moneyDataSet;
         private System.Windows.Forms.BindingSource moneyDataSetBindingSource;
+        private CategoryDataSet categoryDataSet;
     }
 }
 
