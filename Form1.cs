@@ -30,7 +30,31 @@ namespace AccountBook
                     int.Parse(frmItem.txtMoney.Text),
                     frmItem.txtRemarks.Text);
             }
-        } 
+        }
+
+        public void SaveData()
+        {
+            // .abd is AccountBookData format
+            // abd is csv format;
+            string path = "AccountBook.abd";
+            string strData = "";
+
+            System.IO.StreamWriter sw = new System.IO.StreamWriter(
+                path,false,System.Text.Encoding.UTF8
+                );
+
+            foreach (MoneyDataSet.moneyDataTableRow drMoney in moneyDataSet.moneyDataTable)
+            {
+                strData = drMoney.日付 .ToShortDateString()+","
+                    + drMoney.分類+"," 
+                    + drMoney.品名+"," 
+                    + drMoney.金額.ToString() +"," 
+                    + drMoney.備考 ;
+                Console.WriteLine(strData);
+                sw.WriteLine(strData);
+            }
+            sw.Close();
+        }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -58,6 +82,11 @@ namespace AccountBook
         private void buttonEnd_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void saveSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveData();
         }
     }
 }
