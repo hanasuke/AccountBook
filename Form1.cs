@@ -15,6 +15,7 @@ namespace AccountBook
         public Form1()
         {
             InitializeComponent();
+            LoadData();
         }
 
         private void AddData()
@@ -45,7 +46,7 @@ namespace AccountBook
 
             foreach (MoneyDataSet.moneyDataTableRow drMoney in moneyDataSet.moneyDataTable)
             {
-                strData = drMoney.日付 .ToShortDateString()+","
+                strData = drMoney.日付.ToShortDateString()+","
                     + drMoney.分類+"," 
                     + drMoney.品名+"," 
                     + drMoney.金額.ToString() +"," 
@@ -54,6 +55,32 @@ namespace AccountBook
                 sw.WriteLine(strData);
             }
             sw.Close();
+        }
+
+        public void LoadData()
+        {
+            // .abd is AccountBookData format
+            // abd is csv format;
+            string path = "AccountBook.abd";
+            string delimStr = ",";
+            char[] delimiter = delimStr.ToCharArray();
+            string[] strData;
+            string strLine;
+            bool fileExists = System.IO.File.Exists(path);
+
+            if (fileExists)
+            {
+                System.IO.StreamReader sr = new System.IO.StreamReader(path, System.Text.Encoding.Default);
+
+                while (sr.Peek() >= 0)
+                {
+                    strLine = sr.ReadLine();
+                    strData = strLine.Split(delimiter);
+
+                    moneyDataSet.moneyDataTable.AddmoneyDataTableRow(DateTime.Parse(strData[0]), strData[1], strData[2], int.Parse(strData[3]), strData[4]);
+                }
+                sr.Close();
+            }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -87,6 +114,11 @@ namespace AccountBook
         private void saveSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveData();
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

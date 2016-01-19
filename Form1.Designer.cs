@@ -57,6 +57,7 @@
             this.buttonEnd = new System.Windows.Forms.Button();
             this.moneyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryDataSet = new AccountBook.CategoryDataSet();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataTableBindingSource)).BeginInit();
@@ -81,6 +82,7 @@
             // ファイルToolStripMenuItem
             // 
             this.ファイルToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem,
             this.saveSToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
@@ -276,6 +278,13 @@
             this.categoryDataSet.DataSetName = "CategoryDataSet";
             this.categoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem.Text = "読込";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -333,6 +342,7 @@
         private MoneyDataSet moneyDataSet;
         private System.Windows.Forms.BindingSource moneyDataSetBindingSource;
         private CategoryDataSet categoryDataSet;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
     }
 }
 
