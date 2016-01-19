@@ -18,6 +18,18 @@ namespace AccountBook
             categoryDataSet.Merge(argCategoryDataSet);
         }
 
+        public ItemForm(CategoryDataSet argCategoryDataSet,
+            DateTime nowDate,string category,string item,int money,string remarks)
+        {
+            InitializeComponent();
+            categoryDataSet.Merge(argCategoryDataSet);
+            monCalendar.SetDate(nowDate);
+            cmbCategory.Text = category;
+            txtItem.Text = item;
+            txtMoney.Text = money.ToString();
+            txtRemarks.Text = remarks;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("regist button clicked");
