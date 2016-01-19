@@ -111,6 +111,12 @@ namespace AccountBook
             }
         }
 
+        public void DeleteData()
+        {
+            int currentRow = dgv.CurrentRow.Index;
+            dgv.Rows.RemoveAt(currentRow);
+        }
+
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             AddData();
@@ -157,6 +163,16 @@ namespace AccountBook
         private void changeCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UpdateData();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DeleteData();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteData();
         }
     }
 }
