@@ -70,6 +70,7 @@ namespace AccountBook
 
             if (fileExists)
             {
+                moneyDataSet.moneyDataTable.Clear();
                 System.IO.StreamReader sr = new System.IO.StreamReader(path, System.Text.Encoding.Default);
 
                 while (sr.Peek() >= 0)
