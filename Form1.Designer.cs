@@ -58,6 +58,8 @@
             this.buttonEnd = new System.Windows.Forms.Button();
             this.moneyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryDataSet = new AccountBook.CategoryDataSet();
+            this.updateSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataTableBindingSource)).BeginInit();
@@ -99,10 +101,12 @@
             // 
             // saveSToolStripMenuItem
             // 
+            this.saveSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateSaveToolStripMenuItem,
+            this.renameSaveToolStripMenuItem});
             this.saveSToolStripMenuItem.Name = "saveSToolStripMenuItem";
             this.saveSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveSToolStripMenuItem.Text = "保存(&S)";
-            this.saveSToolStripMenuItem.Click += new System.EventHandler(this.saveSToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -289,6 +293,20 @@
             this.categoryDataSet.DataSetName = "CategoryDataSet";
             this.categoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // updateSaveToolStripMenuItem
+            // 
+            this.updateSaveToolStripMenuItem.Name = "updateSaveToolStripMenuItem";
+            this.updateSaveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateSaveToolStripMenuItem.Text = "上書き保存";
+            this.updateSaveToolStripMenuItem.Click += new System.EventHandler(this.updateSaveToolStripMenuItem_Click);
+            // 
+            // renameSaveToolStripMenuItem
+            // 
+            this.renameSaveToolStripMenuItem.Name = "renameSaveToolStripMenuItem";
+            this.renameSaveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.renameSaveToolStripMenuItem.Text = "別名で保存";
+            this.renameSaveToolStripMenuItem.Click += new System.EventHandler(this.renameSaveToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -347,6 +365,8 @@
         private System.Windows.Forms.BindingSource moneyDataSetBindingSource;
         private CategoryDataSet categoryDataSet;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateSaveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renameSaveToolStripMenuItem;
     }
 }
 

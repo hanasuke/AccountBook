@@ -15,7 +15,7 @@ namespace AccountBook
         public Form1()
         {
             InitializeComponent();
-            LoadData("AccountBook.abd");
+            LoadData(Constants.defaultFileName);
         }
 
         private void AddData()
@@ -33,11 +33,11 @@ namespace AccountBook
             }
         }
 
-        public void SaveData()
+        public void SaveData(string argPath)
         {
             // .abd is AccountBookData format
             // abd is csv format;
-            string path = "AccountBook.abd";
+            string path = argPath;
             string strData = "";
 
             System.IO.StreamWriter sw = new System.IO.StreamWriter(
@@ -145,11 +145,6 @@ namespace AccountBook
             this.Close();
         }
 
-        private void saveSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveData();
-        }
-
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -179,6 +174,22 @@ namespace AccountBook
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DeleteData();
+        }
+
+        private void updateSaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveData(Constants.defaultFileName);
+        }
+
+        private void renameSaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Account Bookファイル(*.abd)|*.abd";
+            sfd.Title = "保存先を選択してください";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                SaveData(sfd.FileName);
+            }
         }
     }
 }

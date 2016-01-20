@@ -53,6 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CategoryDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Constants.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
