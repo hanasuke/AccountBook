@@ -15,7 +15,7 @@ namespace AccountBook
         public Form1()
         {
             InitializeComponent();
-            LoadData();
+            LoadData("AccountBook.abd");
         }
 
         private void AddData()
@@ -57,11 +57,11 @@ namespace AccountBook
             sw.Close();
         }
 
-        public void LoadData()
+        public void LoadData(string argPath)
         {
             // .abd is AccountBookData format
             // abd is csv format;
-            string path = "AccountBook.abd";
+            string path = argPath;
             string delimStr = ",";
             char[] delimiter = delimStr.ToCharArray();
             string[] strData;
@@ -152,7 +152,13 @@ namespace AccountBook
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoadData();
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Account Bookファイル(*.abd)|*.abd";
+            ofd.Title = "開くファイルを選択してください";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                LoadData(ofd.FileName);
+            }
         }
 
         private void buttonChange_Click(object sender, EventArgs e)
