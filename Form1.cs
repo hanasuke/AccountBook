@@ -12,10 +12,12 @@ namespace AccountBook
 {
     public partial class Form1 : Form
     {
+        public string currentLoadFileName;
         public Form1()
         {
             InitializeComponent();
             LoadData(Constants.defaultFileName);
+            currentLoadFileName = Constants.defaultFileName;
         }
 
         private void AddData()
@@ -154,6 +156,7 @@ namespace AccountBook
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 LoadData(ofd.FileName);
+                currentLoadFileName = ofd.FileName;
             }
         }
 
@@ -179,7 +182,7 @@ namespace AccountBook
 
         private void updateSaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveData(Constants.defaultFileName);
+            SaveData(currentLoadFileName);
         }
 
         private void renameSaveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -190,6 +193,7 @@ namespace AccountBook
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 SaveData(sfd.FileName);
+                currentLoadFileName = sfd.FileName;
             }
         }
     }
