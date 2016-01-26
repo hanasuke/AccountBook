@@ -173,7 +173,7 @@ namespace AccountBook
         {
             DateTime selectedDate = monthCalendar1.SelectionRange.Start;
             debugLabel.Text = selectedDate.ToString("yyyy/mm/dd");
-            //moneyDataOnDay.Select("日付 = "+ selectedDate);
+            //moneyDataSet.sele
         }
 
         private void buttonAddTable_Click(object sender, EventArgs e)

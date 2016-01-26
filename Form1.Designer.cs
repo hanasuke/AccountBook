@@ -319,6 +319,8 @@
             // 
             // dgvTable
             // 
+            this.dgvTable.AllowUserToAddRows = false;
+            this.dgvTable.AllowUserToDeleteRows = false;
             this.dgvTable.AutoGenerateColumns = false;
             this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -331,6 +333,7 @@
             this.dgvTable.Location = new System.Drawing.Point(-5, 0);
             this.dgvTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvTable.Name = "dgvTable";
+            this.dgvTable.ReadOnly = true;
             this.dgvTable.RowTemplate.Height = 21;
             this.dgvTable.Size = new System.Drawing.Size(475, 325);
             this.dgvTable.TabIndex = 11;
@@ -374,6 +377,8 @@
             // 
             // dgvCal
             // 
+            this.dgvCal.AllowUserToAddRows = false;
+            this.dgvCal.AllowUserToDeleteRows = false;
             this.dgvCal.AutoGenerateColumns = false;
             this.dgvCal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -385,6 +390,7 @@
             this.dgvCal.DataSource = this.moneyDataTableBindingSource;
             this.dgvCal.Location = new System.Drawing.Point(13, 183);
             this.dgvCal.Name = "dgvCal";
+            this.dgvCal.ReadOnly = true;
             this.dgvCal.RowTemplate.Height = 21;
             this.dgvCal.Size = new System.Drawing.Size(444, 150);
             this.dgvCal.TabIndex = 1;
