@@ -85,7 +85,7 @@
             this.txtItem.Location = new System.Drawing.Point(54, 92);
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(158, 19);
-            this.txtItem.TabIndex = 5;
+            this.txtItem.TabIndex = 2;
             // 
             // cmbCategory
             // 
@@ -96,7 +96,7 @@
             this.cmbCategory.Location = new System.Drawing.Point(54, 52);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(158, 20);
-            this.cmbCategory.TabIndex = 6;
+            this.cmbCategory.TabIndex = 50;
             // 
             // categoryDataSet
             // 
@@ -108,7 +108,7 @@
             this.txtMoney.Location = new System.Drawing.Point(54, 131);
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(158, 19);
-            this.txtMoney.TabIndex = 7;
+            this.txtMoney.TabIndex = 3;
             // 
             // txtRemarks
             // 
@@ -116,7 +116,7 @@
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(158, 56);
-            this.txtRemarks.TabIndex = 8;
+            this.txtRemarks.TabIndex = 4;
             // 
             // buttonCancel
             // 
@@ -124,7 +124,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(14, 246);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 9;
+            this.buttonCancel.TabIndex = 10;
             this.buttonCancel.Text = "キャンセル";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
@@ -134,7 +134,7 @@
             this.button1.Location = new System.Drawing.Point(137, 246);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 5;
             this.button1.Text = "登録";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -144,7 +144,7 @@
             this.dateTimePicker.Location = new System.Drawing.Point(54, 15);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(158, 19);
-            this.dateTimePicker.TabIndex = 11;
+            this.dateTimePicker.TabIndex = 100;
             // 
             // label5
             // 
