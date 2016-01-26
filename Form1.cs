@@ -122,11 +122,6 @@ namespace AccountBook
             dgvTable.Rows.RemoveAt(currentRow);
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
-        {
-            AddData();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             categoryDataSet._CategoryDataSet.AddCategoryDataSetRow("給料", "入金");
@@ -145,11 +140,6 @@ namespace AccountBook
             this.Close();
         }
 
-        private void buttonEnd_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -160,26 +150,6 @@ namespace AccountBook
                 LoadData(ofd.FileName);
                 currentLoadFileName = ofd.FileName;
             }
-        }
-
-        private void buttonChange_Click(object sender, EventArgs e)
-        {
-            UpdateData(dgvCal);
-        }
-
-        private void changeCToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UpdateData(dgvTable);
-        }
-
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            DeleteData(dgvCal);
-        }
-
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DeleteData(dgvCal);
         }
 
         private void updateSaveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -237,6 +207,11 @@ namespace AccountBook
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonEndTable_Click(object sender, EventArgs e)
         {
             this.Close();
         }

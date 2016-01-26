@@ -51,7 +51,7 @@
             this.calendarView = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.buttonEnd = new System.Windows.Forms.Button();
+            this.buttonEndTable = new System.Windows.Forms.Button();
             this.buttonDeleteTable = new System.Windows.Forms.Button();
             this.buttonChangeTable = new System.Windows.Forms.Button();
             this.buttonAddTable = new System.Windows.Forms.Button();
@@ -65,7 +65,7 @@
             this.dgvCal = new System.Windows.Forms.DataGridView();
             this.debugLabel = new System.Windows.Forms.Label();
             this.categoryDataSet1 = new AccountBook.CategoryDataSet();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEndCal = new System.Windows.Forms.Button();
             this.buttonDeleteCal = new System.Windows.Forms.Button();
             this.buttonChangeCal = new System.Windows.Forms.Button();
             this.buttonAddCal = new System.Windows.Forms.Button();
@@ -115,7 +115,7 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadToolStripMenuItem.Text = "読込(&O)";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
@@ -125,7 +125,7 @@
             this.updateSaveToolStripMenuItem,
             this.renameSaveToolStripMenuItem});
             this.saveSToolStripMenuItem.Name = "saveSToolStripMenuItem";
-            this.saveSToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.saveSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveSToolStripMenuItem.Text = "保存(&S)";
             // 
             // updateSaveToolStripMenuItem
@@ -145,12 +145,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(112, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "終了(&X)";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -165,7 +165,7 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addToolStripMenuItem.Text = "追加(&A)";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addAToolStripMenuItem_Click);
             // 
@@ -181,13 +181,13 @@
             // 一覧表示LToolStripMenuItem
             // 
             this.一覧表示LToolStripMenuItem.Name = "一覧表示LToolStripMenuItem";
-            this.一覧表示LToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.一覧表示LToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.一覧表示LToolStripMenuItem.Text = "一覧表示(&L)";
             // 
             // 集計表示SToolStripMenuItem
             // 
             this.集計表示SToolStripMenuItem.Name = "集計表示SToolStripMenuItem";
-            this.集計表示SToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.集計表示SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.集計表示SToolStripMenuItem.Text = "集計表示(&S)";
             // 
             // ヘルプHToolStripMenuItem
@@ -241,7 +241,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.buttonEndCal);
             this.tabPage1.Controls.Add(this.buttonDeleteCal);
             this.tabPage1.Controls.Add(this.buttonChangeCal);
             this.tabPage1.Controls.Add(this.buttonAddCal);
@@ -259,7 +259,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.buttonEnd);
+            this.tabPage2.Controls.Add(this.buttonEndTable);
             this.tabPage2.Controls.Add(this.buttonDeleteTable);
             this.tabPage2.Controls.Add(this.buttonChangeTable);
             this.tabPage2.Controls.Add(this.buttonAddTable);
@@ -273,15 +273,16 @@
             this.tabPage2.Text = "テーブル";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // buttonEnd
+            // buttonEndTable
             // 
-            this.buttonEnd.Location = new System.Drawing.Point(357, 334);
-            this.buttonEnd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonEnd.Name = "buttonEnd";
-            this.buttonEnd.Size = new System.Drawing.Size(87, 34);
-            this.buttonEnd.TabIndex = 15;
-            this.buttonEnd.Text = "終了";
-            this.buttonEnd.UseVisualStyleBackColor = true;
+            this.buttonEndTable.Location = new System.Drawing.Point(357, 334);
+            this.buttonEndTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonEndTable.Name = "buttonEndTable";
+            this.buttonEndTable.Size = new System.Drawing.Size(87, 34);
+            this.buttonEndTable.TabIndex = 15;
+            this.buttonEndTable.Text = "終了";
+            this.buttonEndTable.UseVisualStyleBackColor = true;
+            this.buttonEndTable.Click += new System.EventHandler(this.buttonEndTable_Click);
             // 
             // buttonDeleteTable
             // 
@@ -402,16 +403,16 @@
             this.categoryDataSet1.DataSetName = "CategoryDataSet";
             this.categoryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button1
+            // buttonEndCal
             // 
-            this.button1.Location = new System.Drawing.Point(366, 345);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 34);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "終了";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonEndCal.Location = new System.Drawing.Point(366, 345);
+            this.buttonEndCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonEndCal.Name = "buttonEndCal";
+            this.buttonEndCal.Size = new System.Drawing.Size(87, 34);
+            this.buttonEndCal.TabIndex = 19;
+            this.buttonEndCal.Text = "終了";
+            this.buttonEndCal.UseVisualStyleBackColor = true;
+            this.buttonEndCal.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonDeleteCal
             // 
@@ -532,7 +533,7 @@
         private System.Windows.Forms.TabControl calendarView;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button buttonEnd;
+        private System.Windows.Forms.Button buttonEndTable;
         private System.Windows.Forms.Button buttonDeleteTable;
         private System.Windows.Forms.Button buttonChangeTable;
         private System.Windows.Forms.Button buttonAddTable;
@@ -546,7 +547,7 @@
         private System.Windows.Forms.Label debugLabel;
         public System.Windows.Forms.MonthCalendar monthCalendar1;
         private CategoryDataSet categoryDataSet1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEndCal;
         private System.Windows.Forms.Button buttonDeleteCal;
         private System.Windows.Forms.Button buttonChangeCal;
         private System.Windows.Forms.Button buttonAddCal;
