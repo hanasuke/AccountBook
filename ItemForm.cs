@@ -23,7 +23,7 @@ namespace AccountBook
         {
             InitializeComponent();
             categoryDataSet.Merge(argCategoryDataSet);
-            monCalendar.SetDate(nowDate);
+            //monCalendar.SetDate(nowDate);
             cmbCategory.Text = category;
             txtItem.Text = item;
             txtMoney.Text = money.ToString();

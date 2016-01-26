@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.monCalendar = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,19 +39,15 @@
             this.txtRemarks = new System.Windows.Forms.TextBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // monCalendar
-            // 
-            this.monCalendar.Location = new System.Drawing.Point(18, 18);
-            this.monCalendar.Name = "monCalendar";
-            this.monCalendar.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(229, 18);
+            this.label1.Location = new System.Drawing.Point(12, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 1;
@@ -61,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 68);
+            this.label2.Location = new System.Drawing.Point(12, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 2;
@@ -70,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 118);
+            this.label3.Location = new System.Drawing.Point(12, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 3;
@@ -79,7 +74,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(229, 168);
+            this.label4.Location = new System.Drawing.Point(12, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 4;
@@ -87,9 +82,9 @@
             // 
             // txtItem
             // 
-            this.txtItem.Location = new System.Drawing.Point(270, 65);
+            this.txtItem.Location = new System.Drawing.Point(54, 92);
             this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(123, 19);
+            this.txtItem.Size = new System.Drawing.Size(158, 19);
             this.txtItem.TabIndex = 5;
             // 
             // cmbCategory
@@ -98,9 +93,9 @@
             this.cmbCategory.DisplayMember = "CategoryDataSet.分類";
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(270, 15);
+            this.cmbCategory.Location = new System.Drawing.Point(54, 52);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(141, 20);
+            this.cmbCategory.Size = new System.Drawing.Size(158, 20);
             this.cmbCategory.TabIndex = 6;
             // 
             // categoryDataSet
@@ -110,22 +105,23 @@
             // 
             // txtMoney
             // 
-            this.txtMoney.Location = new System.Drawing.Point(270, 115);
+            this.txtMoney.Location = new System.Drawing.Point(54, 131);
             this.txtMoney.Name = "txtMoney";
-            this.txtMoney.Size = new System.Drawing.Size(123, 19);
+            this.txtMoney.Size = new System.Drawing.Size(158, 19);
             this.txtMoney.TabIndex = 7;
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(270, 165);
+            this.txtRemarks.Location = new System.Drawing.Point(54, 170);
+            this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
-            this.txtRemarks.Size = new System.Drawing.Size(123, 19);
+            this.txtRemarks.Size = new System.Drawing.Size(158, 56);
             this.txtRemarks.TabIndex = 8;
             // 
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(286, 190);
+            this.buttonCancel.Location = new System.Drawing.Point(14, 246);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 9;
@@ -135,7 +131,7 @@
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(81, 192);
+            this.button1.Location = new System.Drawing.Point(137, 246);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
@@ -143,11 +139,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(54, 15);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(158, 19);
+            this.dateTimePicker.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "日付";
+            // 
             // ItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 231);
+            this.ClientSize = new System.Drawing.Size(236, 289);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.txtRemarks);
@@ -158,7 +172,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.monCalendar);
             this.Name = "ItemForm";
             this.Text = "登録";
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).EndInit();
@@ -176,10 +189,11 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button button1;
         private CategoryDataSet categoryDataSet;
-        public System.Windows.Forms.MonthCalendar monCalendar;
         public System.Windows.Forms.TextBox txtItem;
         public System.Windows.Forms.ComboBox cmbCategory;
         public System.Windows.Forms.TextBox txtMoney;
         public System.Windows.Forms.TextBox txtRemarks;
+        public System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Label label5;
     }
 }

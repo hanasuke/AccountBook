@@ -27,7 +27,9 @@ namespace AccountBook
             if (drRet == DialogResult.OK)
             {
                 moneyDataSet.moneyDataTable.AddmoneyDataTableRow(
-                    frmItem.monCalendar.SelectionRange.Start,
+                    //DateTime.Now,
+                    //frmItem.monCalendar.SelectionRange.Start,
+                    frmItem.dateTimePicker.Value.Date,
                     frmItem.cmbCategory.Text,
                     frmItem.txtItem.Text,
                     int.Parse(frmItem.txtMoney.Text),
@@ -105,8 +107,8 @@ namespace AccountBook
             DialogResult drRet = frmItem.ShowDialog();
             if (drRet == DialogResult.OK)
             {
-                dgv.Rows[nowRow].Cells[0].Value
-                    = frmItem.monCalendar.SelectionRange.Start;
+                //dgv.Rows[nowRow].Cells[0].Value
+                   // = frmItem.monCalendar.SelectionRange.Start;
                 dgv.Rows[nowRow].Cells[1].Value = frmItem.cmbCategory.Text;
                 dgv.Rows[nowRow].Cells[2].Value = frmItem.txtItem.Text;
                 dgv.Rows[nowRow].Cells[3].Value = int.Parse(frmItem.txtMoney.Text);
