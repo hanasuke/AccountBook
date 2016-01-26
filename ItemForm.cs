@@ -30,6 +30,12 @@ namespace AccountBook
             txtRemarks.Text = remarks;
         }
 
+        public ItemForm(DateTime dateTime)
+        {
+            InitializeComponent();
+            dateTimePicker.Value = dateTime;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("regist button clicked");

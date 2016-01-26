@@ -50,6 +50,18 @@
             this.categoryDataSet = new AccountBook.CategoryDataSet();
             this.calendarView = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonEndCal = new System.Windows.Forms.Button();
+            this.buttonDeleteCal = new System.Windows.Forms.Button();
+            this.buttonChangeCal = new System.Windows.Forms.Button();
+            this.buttonAddCal = new System.Windows.Forms.Button();
+            this.debugLabel = new System.Windows.Forms.Label();
+            this.dgvCal = new System.Windows.Forms.DataGridView();
+            this.日付 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.分類DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.品名DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.金額DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.備考DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonEndTable = new System.Windows.Forms.Button();
             this.buttonDeleteTable = new System.Windows.Forms.Button();
@@ -61,19 +73,7 @@
             this.品名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備考DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.dgvCal = new System.Windows.Forms.DataGridView();
-            this.debugLabel = new System.Windows.Forms.Label();
             this.categoryDataSet1 = new AccountBook.CategoryDataSet();
-            this.buttonEndCal = new System.Windows.Forms.Button();
-            this.buttonDeleteCal = new System.Windows.Forms.Button();
-            this.buttonChangeCal = new System.Windows.Forms.Button();
-            this.buttonAddCal = new System.Windows.Forms.Button();
-            this.日付 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.分類DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.品名DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.金額DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.備考DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataSet)).BeginInit();
@@ -81,9 +81,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).BeginInit();
             this.calendarView.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCal)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,7 +115,7 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.loadToolStripMenuItem.Text = "読込(&O)";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
@@ -125,7 +125,7 @@
             this.updateSaveToolStripMenuItem,
             this.renameSaveToolStripMenuItem});
             this.saveSToolStripMenuItem.Name = "saveSToolStripMenuItem";
-            this.saveSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveSToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.saveSToolStripMenuItem.Text = "保存(&S)";
             // 
             // updateSaveToolStripMenuItem
@@ -145,12 +145,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(112, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.exitToolStripMenuItem.Text = "終了(&X)";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -165,7 +165,7 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.addToolStripMenuItem.Text = "追加(&A)";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addAToolStripMenuItem_Click);
             // 
@@ -181,13 +181,13 @@
             // 一覧表示LToolStripMenuItem
             // 
             this.一覧表示LToolStripMenuItem.Name = "一覧表示LToolStripMenuItem";
-            this.一覧表示LToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.一覧表示LToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.一覧表示LToolStripMenuItem.Text = "一覧表示(&L)";
             // 
             // 集計表示SToolStripMenuItem
             // 
             this.集計表示SToolStripMenuItem.Name = "集計表示SToolStripMenuItem";
-            this.集計表示SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.集計表示SToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.集計表示SToolStripMenuItem.Text = "集計表示(&S)";
             // 
             // ヘルプHToolStripMenuItem
@@ -256,6 +256,122 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "カレンダー";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // buttonEndCal
+            // 
+            this.buttonEndCal.Location = new System.Drawing.Point(366, 345);
+            this.buttonEndCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonEndCal.Name = "buttonEndCal";
+            this.buttonEndCal.Size = new System.Drawing.Size(87, 34);
+            this.buttonEndCal.TabIndex = 19;
+            this.buttonEndCal.Text = "終了";
+            this.buttonEndCal.UseVisualStyleBackColor = true;
+            this.buttonEndCal.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonDeleteCal
+            // 
+            this.buttonDeleteCal.Location = new System.Drawing.Point(207, 345);
+            this.buttonDeleteCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonDeleteCal.Name = "buttonDeleteCal";
+            this.buttonDeleteCal.Size = new System.Drawing.Size(87, 34);
+            this.buttonDeleteCal.TabIndex = 18;
+            this.buttonDeleteCal.Text = "削除";
+            this.buttonDeleteCal.UseVisualStyleBackColor = true;
+            this.buttonDeleteCal.Click += new System.EventHandler(this.buttonDeleteCal_Click);
+            // 
+            // buttonChangeCal
+            // 
+            this.buttonChangeCal.Location = new System.Drawing.Point(113, 345);
+            this.buttonChangeCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonChangeCal.Name = "buttonChangeCal";
+            this.buttonChangeCal.Size = new System.Drawing.Size(87, 34);
+            this.buttonChangeCal.TabIndex = 17;
+            this.buttonChangeCal.Text = "変更";
+            this.buttonChangeCal.UseVisualStyleBackColor = true;
+            this.buttonChangeCal.Click += new System.EventHandler(this.buttonChangeCal_Click);
+            // 
+            // buttonAddCal
+            // 
+            this.buttonAddCal.Location = new System.Drawing.Point(18, 345);
+            this.buttonAddCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAddCal.Name = "buttonAddCal";
+            this.buttonAddCal.Size = new System.Drawing.Size(87, 34);
+            this.buttonAddCal.TabIndex = 16;
+            this.buttonAddCal.Text = "追加";
+            this.buttonAddCal.UseVisualStyleBackColor = true;
+            this.buttonAddCal.Click += new System.EventHandler(this.buttonAddCal_Click);
+            // 
+            // debugLabel
+            // 
+            this.debugLabel.AutoSize = true;
+            this.debugLabel.Location = new System.Drawing.Point(220, 46);
+            this.debugLabel.Name = "debugLabel";
+            this.debugLabel.Size = new System.Drawing.Size(74, 18);
+            this.debugLabel.TabIndex = 2;
+            this.debugLabel.Text = "debugLabel";
+            // 
+            // dgvCal
+            // 
+            this.dgvCal.AllowUserToAddRows = false;
+            this.dgvCal.AllowUserToDeleteRows = false;
+            this.dgvCal.AutoGenerateColumns = false;
+            this.dgvCal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.日付,
+            this.分類DataGridViewTextBoxColumn1,
+            this.品名DataGridViewTextBoxColumn1,
+            this.金額DataGridViewTextBoxColumn1,
+            this.備考DataGridViewTextBoxColumn1});
+            this.dgvCal.DataSource = this.moneyDataTableBindingSource;
+            this.dgvCal.Location = new System.Drawing.Point(13, 183);
+            this.dgvCal.Name = "dgvCal";
+            this.dgvCal.ReadOnly = true;
+            this.dgvCal.RowTemplate.Height = 21;
+            this.dgvCal.Size = new System.Drawing.Size(444, 150);
+            this.dgvCal.TabIndex = 1;
+            // 
+            // 日付
+            // 
+            this.日付.DataPropertyName = "日付";
+            this.日付.HeaderText = "日付";
+            this.日付.Name = "日付";
+            this.日付.ReadOnly = true;
+            this.日付.Visible = false;
+            // 
+            // 分類DataGridViewTextBoxColumn1
+            // 
+            this.分類DataGridViewTextBoxColumn1.DataPropertyName = "分類";
+            this.分類DataGridViewTextBoxColumn1.HeaderText = "分類";
+            this.分類DataGridViewTextBoxColumn1.Name = "分類DataGridViewTextBoxColumn1";
+            this.分類DataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // 品名DataGridViewTextBoxColumn1
+            // 
+            this.品名DataGridViewTextBoxColumn1.DataPropertyName = "品名";
+            this.品名DataGridViewTextBoxColumn1.HeaderText = "品名";
+            this.品名DataGridViewTextBoxColumn1.Name = "品名DataGridViewTextBoxColumn1";
+            this.品名DataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // 金額DataGridViewTextBoxColumn1
+            // 
+            this.金額DataGridViewTextBoxColumn1.DataPropertyName = "金額";
+            this.金額DataGridViewTextBoxColumn1.HeaderText = "金額";
+            this.金額DataGridViewTextBoxColumn1.Name = "金額DataGridViewTextBoxColumn1";
+            this.金額DataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // 備考DataGridViewTextBoxColumn1
+            // 
+            this.備考DataGridViewTextBoxColumn1.DataPropertyName = "備考";
+            this.備考DataGridViewTextBoxColumn1.HeaderText = "備考";
+            this.備考DataGridViewTextBoxColumn1.Name = "備考DataGridViewTextBoxColumn1";
+            this.備考DataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(13, 9);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // tabPage2
             // 
@@ -343,146 +459,40 @@
             this.日付DataGridViewTextBoxColumn.DataPropertyName = "日付";
             this.日付DataGridViewTextBoxColumn.HeaderText = "日付";
             this.日付DataGridViewTextBoxColumn.Name = "日付DataGridViewTextBoxColumn";
+            this.日付DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 分類DataGridViewTextBoxColumn
             // 
             this.分類DataGridViewTextBoxColumn.DataPropertyName = "分類";
             this.分類DataGridViewTextBoxColumn.HeaderText = "分類";
             this.分類DataGridViewTextBoxColumn.Name = "分類DataGridViewTextBoxColumn";
+            this.分類DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 品名DataGridViewTextBoxColumn
             // 
             this.品名DataGridViewTextBoxColumn.DataPropertyName = "品名";
             this.品名DataGridViewTextBoxColumn.HeaderText = "品名";
             this.品名DataGridViewTextBoxColumn.Name = "品名DataGridViewTextBoxColumn";
+            this.品名DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 金額DataGridViewTextBoxColumn
             // 
             this.金額DataGridViewTextBoxColumn.DataPropertyName = "金額";
             this.金額DataGridViewTextBoxColumn.HeaderText = "金額";
             this.金額DataGridViewTextBoxColumn.Name = "金額DataGridViewTextBoxColumn";
+            this.金額DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 備考DataGridViewTextBoxColumn
             // 
             this.備考DataGridViewTextBoxColumn.DataPropertyName = "備考";
             this.備考DataGridViewTextBoxColumn.HeaderText = "備考";
             this.備考DataGridViewTextBoxColumn.Name = "備考DataGridViewTextBoxColumn";
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(13, 9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
-            // 
-            // dgvCal
-            // 
-            this.dgvCal.AllowUserToAddRows = false;
-            this.dgvCal.AllowUserToDeleteRows = false;
-            this.dgvCal.AutoGenerateColumns = false;
-            this.dgvCal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.日付,
-            this.分類DataGridViewTextBoxColumn1,
-            this.品名DataGridViewTextBoxColumn1,
-            this.金額DataGridViewTextBoxColumn1,
-            this.備考DataGridViewTextBoxColumn1});
-            this.dgvCal.DataSource = this.moneyDataTableBindingSource;
-            this.dgvCal.Location = new System.Drawing.Point(13, 183);
-            this.dgvCal.Name = "dgvCal";
-            this.dgvCal.ReadOnly = true;
-            this.dgvCal.RowTemplate.Height = 21;
-            this.dgvCal.Size = new System.Drawing.Size(444, 150);
-            this.dgvCal.TabIndex = 1;
-            // 
-            // debugLabel
-            // 
-            this.debugLabel.AutoSize = true;
-            this.debugLabel.Location = new System.Drawing.Point(220, 46);
-            this.debugLabel.Name = "debugLabel";
-            this.debugLabel.Size = new System.Drawing.Size(74, 18);
-            this.debugLabel.TabIndex = 2;
-            this.debugLabel.Text = "debugLabel";
+            this.備考DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // categoryDataSet1
             // 
             this.categoryDataSet1.DataSetName = "CategoryDataSet";
             this.categoryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // buttonEndCal
-            // 
-            this.buttonEndCal.Location = new System.Drawing.Point(366, 345);
-            this.buttonEndCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonEndCal.Name = "buttonEndCal";
-            this.buttonEndCal.Size = new System.Drawing.Size(87, 34);
-            this.buttonEndCal.TabIndex = 19;
-            this.buttonEndCal.Text = "終了";
-            this.buttonEndCal.UseVisualStyleBackColor = true;
-            this.buttonEndCal.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonDeleteCal
-            // 
-            this.buttonDeleteCal.Location = new System.Drawing.Point(207, 345);
-            this.buttonDeleteCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonDeleteCal.Name = "buttonDeleteCal";
-            this.buttonDeleteCal.Size = new System.Drawing.Size(87, 34);
-            this.buttonDeleteCal.TabIndex = 18;
-            this.buttonDeleteCal.Text = "削除";
-            this.buttonDeleteCal.UseVisualStyleBackColor = true;
-            this.buttonDeleteCal.Click += new System.EventHandler(this.buttonDeleteCal_Click);
-            // 
-            // buttonChangeCal
-            // 
-            this.buttonChangeCal.Location = new System.Drawing.Point(113, 345);
-            this.buttonChangeCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonChangeCal.Name = "buttonChangeCal";
-            this.buttonChangeCal.Size = new System.Drawing.Size(87, 34);
-            this.buttonChangeCal.TabIndex = 17;
-            this.buttonChangeCal.Text = "変更";
-            this.buttonChangeCal.UseVisualStyleBackColor = true;
-            this.buttonChangeCal.Click += new System.EventHandler(this.buttonChangeCal_Click);
-            // 
-            // buttonAddCal
-            // 
-            this.buttonAddCal.Location = new System.Drawing.Point(18, 345);
-            this.buttonAddCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonAddCal.Name = "buttonAddCal";
-            this.buttonAddCal.Size = new System.Drawing.Size(87, 34);
-            this.buttonAddCal.TabIndex = 16;
-            this.buttonAddCal.Text = "追加";
-            this.buttonAddCal.UseVisualStyleBackColor = true;
-            this.buttonAddCal.Click += new System.EventHandler(this.buttonAddCal_Click);
-            // 
-            // 日付
-            // 
-            this.日付.DataPropertyName = "日付";
-            this.日付.HeaderText = "日付";
-            this.日付.Name = "日付";
-            this.日付.Visible = false;
-            // 
-            // 分類DataGridViewTextBoxColumn1
-            // 
-            this.分類DataGridViewTextBoxColumn1.DataPropertyName = "分類";
-            this.分類DataGridViewTextBoxColumn1.HeaderText = "分類";
-            this.分類DataGridViewTextBoxColumn1.Name = "分類DataGridViewTextBoxColumn1";
-            // 
-            // 品名DataGridViewTextBoxColumn1
-            // 
-            this.品名DataGridViewTextBoxColumn1.DataPropertyName = "品名";
-            this.品名DataGridViewTextBoxColumn1.HeaderText = "品名";
-            this.品名DataGridViewTextBoxColumn1.Name = "品名DataGridViewTextBoxColumn1";
-            // 
-            // 金額DataGridViewTextBoxColumn1
-            // 
-            this.金額DataGridViewTextBoxColumn1.DataPropertyName = "金額";
-            this.金額DataGridViewTextBoxColumn1.HeaderText = "金額";
-            this.金額DataGridViewTextBoxColumn1.Name = "金額DataGridViewTextBoxColumn1";
-            // 
-            // 備考DataGridViewTextBoxColumn1
-            // 
-            this.備考DataGridViewTextBoxColumn1.DataPropertyName = "備考";
-            this.備考DataGridViewTextBoxColumn1.HeaderText = "備考";
-            this.備考DataGridViewTextBoxColumn1.Name = "備考DataGridViewTextBoxColumn1";
             // 
             // Form1
             // 
@@ -506,9 +516,9 @@
             this.calendarView.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCal)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

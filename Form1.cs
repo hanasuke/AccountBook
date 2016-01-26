@@ -37,6 +37,23 @@ namespace AccountBook
             }
         }
 
+        private void AddData(DateTime dateTime)
+        {
+            ItemForm frmItem = new ItemForm(dateTime);
+            DialogResult drRet = frmItem.ShowDialog();
+            if (drRet == DialogResult.OK)
+            {
+                moneyDataSet.moneyDataTable.AddmoneyDataTableRow(
+                    //DateTime.Now,
+                    //frmItem.monCalendar.SelectionRange.Start,
+                    frmItem.dateTimePicker.Value.Date,
+                    frmItem.cmbCategory.Text,
+                    frmItem.txtItem.Text,
+                    int.Parse(frmItem.txtMoney.Text),
+                    frmItem.txtRemarks.Text);
+            }
+        }
+
         public void SaveData(string argPath)
         {
             // .abd is AccountBookData format
@@ -214,6 +231,12 @@ namespace AccountBook
         private void buttonEndTable_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+            AddData(monthCalendar1.SelectionRange.Start);
         }
     }
 }
