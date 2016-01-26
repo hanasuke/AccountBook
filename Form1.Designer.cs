@@ -39,8 +39,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.表示VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.一覧表示LToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.集計表示SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,23 +52,39 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonEnd = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonChange = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.dgv = new System.Windows.Forms.DataGridView();
+            this.buttonDeleteTable = new System.Windows.Forms.Button();
+            this.buttonChangeTable = new System.Windows.Forms.Button();
+            this.buttonAddTable = new System.Windows.Forms.Button();
+            this.dgvTable = new System.Windows.Forms.DataGridView();
             this.日付DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.分類DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.品名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備考DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.dgvCal = new System.Windows.Forms.DataGridView();
+            this.debugLabel = new System.Windows.Forms.Label();
+            this.categoryDataSet1 = new AccountBook.CategoryDataSet();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonDeleteCal = new System.Windows.Forms.Button();
+            this.buttonChangeCal = new System.Windows.Forms.Button();
+            this.buttonAddCal = new System.Windows.Forms.Button();
+            this.日付 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.分類DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.品名DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.金額DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.備考DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).BeginInit();
             this.calendarView.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -83,7 +97,7 @@
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.mainMenu.Size = new System.Drawing.Size(461, 25);
+            this.mainMenu.Size = new System.Drawing.Size(478, 25);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -143,9 +157,7 @@
             // 編集ToolStripMenuItem
             // 
             this.編集ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.changeToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+            this.addToolStripMenuItem});
             this.編集ToolStripMenuItem.Name = "編集ToolStripMenuItem";
             this.編集ToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
             this.編集ToolStripMenuItem.Text = "編集(&E)";
@@ -156,20 +168,6 @@
             this.addToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.addToolStripMenuItem.Text = "追加(&A)";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addAToolStripMenuItem_Click);
-            // 
-            // changeToolStripMenuItem
-            // 
-            this.changeToolStripMenuItem.Name = "changeToolStripMenuItem";
-            this.changeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.changeToolStripMenuItem.Text = "変更(&C)";
-            this.changeToolStripMenuItem.Click += new System.EventHandler(this.changeCToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.deleteToolStripMenuItem.Text = "削除(&D)";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // 表示VToolStripMenuItem
             // 
@@ -236,18 +234,25 @@
             this.calendarView.Name = "calendarView";
             this.calendarView.SelectedIndex = 0;
             this.calendarView.ShowToolTips = true;
-            this.calendarView.Size = new System.Drawing.Size(461, 418);
+            this.calendarView.Size = new System.Drawing.Size(478, 418);
             this.calendarView.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.calendarView.TabIndex = 0;
             this.calendarView.Tag = "";
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.buttonDeleteCal);
+            this.tabPage1.Controls.Add(this.buttonChangeCal);
+            this.tabPage1.Controls.Add(this.buttonAddCal);
+            this.tabPage1.Controls.Add(this.debugLabel);
+            this.tabPage1.Controls.Add(this.dgvCal);
+            this.tabPage1.Controls.Add(this.monthCalendar1);
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(453, 387);
+            this.tabPage1.Size = new System.Drawing.Size(470, 387);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "カレンダー";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -255,15 +260,15 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.buttonEnd);
-            this.tabPage2.Controls.Add(this.buttonDelete);
-            this.tabPage2.Controls.Add(this.buttonChange);
-            this.tabPage2.Controls.Add(this.buttonAdd);
-            this.tabPage2.Controls.Add(this.dgv);
+            this.tabPage2.Controls.Add(this.buttonDeleteTable);
+            this.tabPage2.Controls.Add(this.buttonChangeTable);
+            this.tabPage2.Controls.Add(this.buttonAddTable);
+            this.tabPage2.Controls.Add(this.dgvTable);
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(453, 387);
+            this.tabPage2.Size = new System.Drawing.Size(470, 387);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "テーブル";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -278,53 +283,56 @@
             this.buttonEnd.Text = "終了";
             this.buttonEnd.UseVisualStyleBackColor = true;
             // 
-            // buttonDelete
+            // buttonDeleteTable
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(198, 334);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(87, 34);
-            this.buttonDelete.TabIndex = 14;
-            this.buttonDelete.Text = "削除";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDeleteTable.Location = new System.Drawing.Point(198, 334);
+            this.buttonDeleteTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonDeleteTable.Name = "buttonDeleteTable";
+            this.buttonDeleteTable.Size = new System.Drawing.Size(87, 34);
+            this.buttonDeleteTable.TabIndex = 14;
+            this.buttonDeleteTable.Text = "削除";
+            this.buttonDeleteTable.UseVisualStyleBackColor = true;
+            this.buttonDeleteTable.Click += new System.EventHandler(this.buttonDeleteTable_Click);
             // 
-            // buttonChange
+            // buttonChangeTable
             // 
-            this.buttonChange.Location = new System.Drawing.Point(104, 334);
-            this.buttonChange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(87, 34);
-            this.buttonChange.TabIndex = 13;
-            this.buttonChange.Text = "変更";
-            this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChangeTable.Location = new System.Drawing.Point(104, 334);
+            this.buttonChangeTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonChangeTable.Name = "buttonChangeTable";
+            this.buttonChangeTable.Size = new System.Drawing.Size(87, 34);
+            this.buttonChangeTable.TabIndex = 13;
+            this.buttonChangeTable.Text = "変更";
+            this.buttonChangeTable.UseVisualStyleBackColor = true;
+            this.buttonChangeTable.Click += new System.EventHandler(this.buttonChangeTable_Click);
             // 
-            // buttonAdd
+            // buttonAddTable
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(9, 334);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(87, 34);
-            this.buttonAdd.TabIndex = 12;
-            this.buttonAdd.Text = "追加";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAddTable.Location = new System.Drawing.Point(9, 334);
+            this.buttonAddTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAddTable.Name = "buttonAddTable";
+            this.buttonAddTable.Size = new System.Drawing.Size(87, 34);
+            this.buttonAddTable.TabIndex = 12;
+            this.buttonAddTable.Text = "追加";
+            this.buttonAddTable.UseVisualStyleBackColor = true;
+            this.buttonAddTable.Click += new System.EventHandler(this.buttonAddTable_Click);
             // 
-            // dgv
+            // dgvTable
             // 
-            this.dgv.AutoGenerateColumns = false;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTable.AutoGenerateColumns = false;
+            this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.日付DataGridViewTextBoxColumn,
             this.分類DataGridViewTextBoxColumn,
             this.品名DataGridViewTextBoxColumn,
             this.金額DataGridViewTextBoxColumn,
             this.備考DataGridViewTextBoxColumn});
-            this.dgv.DataSource = this.moneyDataTableBindingSource;
-            this.dgv.Location = new System.Drawing.Point(-5, 10);
-            this.dgv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgv.Name = "dgv";
-            this.dgv.RowTemplate.Height = 21;
-            this.dgv.Size = new System.Drawing.Size(461, 315);
-            this.dgv.TabIndex = 11;
+            this.dgvTable.DataSource = this.moneyDataTableBindingSource;
+            this.dgvTable.Location = new System.Drawing.Point(-5, 0);
+            this.dgvTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvTable.Name = "dgvTable";
+            this.dgvTable.RowTemplate.Height = 21;
+            this.dgvTable.Size = new System.Drawing.Size(475, 325);
+            this.dgvTable.TabIndex = 11;
             // 
             // 日付DataGridViewTextBoxColumn
             // 
@@ -356,11 +364,124 @@
             this.備考DataGridViewTextBoxColumn.HeaderText = "備考";
             this.備考DataGridViewTextBoxColumn.Name = "備考DataGridViewTextBoxColumn";
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(13, 9);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
+            // 
+            // dgvCal
+            // 
+            this.dgvCal.AutoGenerateColumns = false;
+            this.dgvCal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.日付,
+            this.分類DataGridViewTextBoxColumn1,
+            this.品名DataGridViewTextBoxColumn1,
+            this.金額DataGridViewTextBoxColumn1,
+            this.備考DataGridViewTextBoxColumn1});
+            this.dgvCal.DataSource = this.moneyDataTableBindingSource;
+            this.dgvCal.Location = new System.Drawing.Point(13, 183);
+            this.dgvCal.Name = "dgvCal";
+            this.dgvCal.RowTemplate.Height = 21;
+            this.dgvCal.Size = new System.Drawing.Size(444, 150);
+            this.dgvCal.TabIndex = 1;
+            // 
+            // debugLabel
+            // 
+            this.debugLabel.AutoSize = true;
+            this.debugLabel.Location = new System.Drawing.Point(220, 46);
+            this.debugLabel.Name = "debugLabel";
+            this.debugLabel.Size = new System.Drawing.Size(74, 18);
+            this.debugLabel.TabIndex = 2;
+            this.debugLabel.Text = "debugLabel";
+            // 
+            // categoryDataSet1
+            // 
+            this.categoryDataSet1.DataSetName = "CategoryDataSet";
+            this.categoryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(366, 345);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 34);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "終了";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonDeleteCal
+            // 
+            this.buttonDeleteCal.Location = new System.Drawing.Point(207, 345);
+            this.buttonDeleteCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonDeleteCal.Name = "buttonDeleteCal";
+            this.buttonDeleteCal.Size = new System.Drawing.Size(87, 34);
+            this.buttonDeleteCal.TabIndex = 18;
+            this.buttonDeleteCal.Text = "削除";
+            this.buttonDeleteCal.UseVisualStyleBackColor = true;
+            this.buttonDeleteCal.Click += new System.EventHandler(this.buttonDeleteCal_Click);
+            // 
+            // buttonChangeCal
+            // 
+            this.buttonChangeCal.Location = new System.Drawing.Point(113, 345);
+            this.buttonChangeCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonChangeCal.Name = "buttonChangeCal";
+            this.buttonChangeCal.Size = new System.Drawing.Size(87, 34);
+            this.buttonChangeCal.TabIndex = 17;
+            this.buttonChangeCal.Text = "変更";
+            this.buttonChangeCal.UseVisualStyleBackColor = true;
+            this.buttonChangeCal.Click += new System.EventHandler(this.buttonChangeCal_Click);
+            // 
+            // buttonAddCal
+            // 
+            this.buttonAddCal.Location = new System.Drawing.Point(18, 345);
+            this.buttonAddCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAddCal.Name = "buttonAddCal";
+            this.buttonAddCal.Size = new System.Drawing.Size(87, 34);
+            this.buttonAddCal.TabIndex = 16;
+            this.buttonAddCal.Text = "追加";
+            this.buttonAddCal.UseVisualStyleBackColor = true;
+            this.buttonAddCal.Click += new System.EventHandler(this.buttonAddCal_Click);
+            // 
+            // 日付
+            // 
+            this.日付.DataPropertyName = "日付";
+            this.日付.HeaderText = "日付";
+            this.日付.Name = "日付";
+            this.日付.Visible = false;
+            // 
+            // 分類DataGridViewTextBoxColumn1
+            // 
+            this.分類DataGridViewTextBoxColumn1.DataPropertyName = "分類";
+            this.分類DataGridViewTextBoxColumn1.HeaderText = "分類";
+            this.分類DataGridViewTextBoxColumn1.Name = "分類DataGridViewTextBoxColumn1";
+            // 
+            // 品名DataGridViewTextBoxColumn1
+            // 
+            this.品名DataGridViewTextBoxColumn1.DataPropertyName = "品名";
+            this.品名DataGridViewTextBoxColumn1.HeaderText = "品名";
+            this.品名DataGridViewTextBoxColumn1.Name = "品名DataGridViewTextBoxColumn1";
+            // 
+            // 金額DataGridViewTextBoxColumn1
+            // 
+            this.金額DataGridViewTextBoxColumn1.DataPropertyName = "金額";
+            this.金額DataGridViewTextBoxColumn1.HeaderText = "金額";
+            this.金額DataGridViewTextBoxColumn1.Name = "金額DataGridViewTextBoxColumn1";
+            // 
+            // 備考DataGridViewTextBoxColumn1
+            // 
+            this.備考DataGridViewTextBoxColumn1.DataPropertyName = "備考";
+            this.備考DataGridViewTextBoxColumn1.HeaderText = "備考";
+            this.備考DataGridViewTextBoxColumn1.Name = "備考DataGridViewTextBoxColumn1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 444);
+            this.ClientSize = new System.Drawing.Size(478, 444);
             this.Controls.Add(this.calendarView);
             this.Controls.Add(this.mainMenu);
             this.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -376,8 +497,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).EndInit();
             this.calendarView.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,8 +517,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 編集ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 表示VToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 一覧表示LToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 集計表示SToolStripMenuItem;
@@ -410,15 +533,28 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button buttonEnd;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonChange;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Button buttonDeleteTable;
+        private System.Windows.Forms.Button buttonChangeTable;
+        private System.Windows.Forms.Button buttonAddTable;
+        private System.Windows.Forms.DataGridView dgvTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn 日付DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 分類DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 品名DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 金額DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備考DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dgvCal;
+        private System.Windows.Forms.Label debugLabel;
+        public System.Windows.Forms.MonthCalendar monthCalendar1;
+        private CategoryDataSet categoryDataSet1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonDeleteCal;
+        private System.Windows.Forms.Button buttonChangeCal;
+        private System.Windows.Forms.Button buttonAddCal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 日付;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 分類DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 品名DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 金額DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 備考DataGridViewTextBoxColumn1;
     }
 }
 

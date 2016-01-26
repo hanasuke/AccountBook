@@ -88,7 +88,7 @@ namespace AccountBook
             }
         }
 
-        public void UpdateData()
+        public void UpdateData(DataGridView dgv)
         {
             int nowRow = dgv.CurrentRow.Index;
             DateTime oldDate
@@ -116,10 +116,10 @@ namespace AccountBook
             }
         }
 
-        public void DeleteData()
+        public void DeleteData(DataGridView dgv)
         {
-            int currentRow = dgv.CurrentRow.Index;
-            dgv.Rows.RemoveAt(currentRow);
+            int currentRow = dgvTable.CurrentRow.Index;
+            dgvTable.Rows.RemoveAt(currentRow);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -164,22 +164,22 @@ namespace AccountBook
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            UpdateData();
+            UpdateData(dgvCal);
         }
 
         private void changeCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UpdateData();
+            UpdateData(dgvTable);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            DeleteData();
+            DeleteData(dgvCal);
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DeleteData();
+            DeleteData(dgvCal);
         }
 
         private void updateSaveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -197,6 +197,48 @@ namespace AccountBook
                 SaveData(sfd.FileName);
                 currentLoadFileName = sfd.FileName;
             }
+        }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            DateTime selectedDate = monthCalendar1.SelectionRange.Start;
+            debugLabel.Text = selectedDate.ToString("yyyy/mm/dd");
+            //moneyDataOnDay.Select("日付 = "+ selectedDate);
+        }
+
+        private void buttonAddTable_Click(object sender, EventArgs e)
+        {
+            AddData();
+        }
+
+        private void buttonChangeTable_Click(object sender, EventArgs e)
+        {
+            UpdateData(dgvTable);
+        }
+
+        private void buttonDeleteTable_Click(object sender, EventArgs e)
+        {
+            DeleteData(dgvTable);
+        }
+
+        private void buttonAddCal_Click(object sender, EventArgs e)
+        {
+            AddData();
+        }
+
+        private void buttonChangeCal_Click(object sender, EventArgs e)
+        {
+            UpdateData(dgvCal);
+        }
+
+        private void buttonDeleteCal_Click(object sender, EventArgs e)
+        {
+            DeleteData(dgvCal);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
