@@ -50,11 +50,18 @@
             this.categoryDataSet = new AccountBook.CategoryDataSet();
             this.calendarView = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.titleLabelCal = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.totalCal = new System.Windows.Forms.Label();
+            this.incomeCal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.outCal = new System.Windows.Forms.Label();
             this.buttonEndCal = new System.Windows.Forms.Button();
             this.buttonDeleteCal = new System.Windows.Forms.Button();
             this.buttonChangeCal = new System.Windows.Forms.Button();
             this.buttonAddCal = new System.Windows.Forms.Button();
-            this.debugLabel = new System.Windows.Forms.Label();
             this.dgvCal = new System.Windows.Forms.DataGridView();
             this.日付 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.分類DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).BeginInit();
             this.calendarView.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCal)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
@@ -241,11 +249,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.titleLabelCal);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.Controls.Add(this.buttonEndCal);
             this.tabPage1.Controls.Add(this.buttonDeleteCal);
             this.tabPage1.Controls.Add(this.buttonChangeCal);
             this.tabPage1.Controls.Add(this.buttonAddCal);
-            this.tabPage1.Controls.Add(this.debugLabel);
             this.tabPage1.Controls.Add(this.dgvCal);
             this.tabPage1.Controls.Add(this.monthCalendar1);
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
@@ -256,6 +265,114 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "カレンダー";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // titleLabelCal
+            // 
+            this.titleLabelCal.AutoSize = true;
+            this.titleLabelCal.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.titleLabelCal.Location = new System.Drawing.Point(298, 9);
+            this.titleLabelCal.Name = "titleLabelCal";
+            this.titleLabelCal.Size = new System.Drawing.Size(107, 28);
+            this.titleLabelCal.TabIndex = 21;
+            this.titleLabelCal.Text = "今月の収支";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64F));
+            this.tableLayoutPanel1.Controls.Add(this.totalCal, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.incomeCal, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.outCal, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(253, 40);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 131);
+            this.tableLayoutPanel1.TabIndex = 20;
+            // 
+            // totalCal
+            // 
+            this.totalCal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.totalCal.AutoSize = true;
+            this.totalCal.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.totalCal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.totalCal.Location = new System.Drawing.Point(143, 90);
+            this.totalCal.Name = "totalCal";
+            this.totalCal.Size = new System.Drawing.Size(54, 36);
+            this.totalCal.TabIndex = 5;
+            this.totalCal.Text = "0円";
+            this.totalCal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // incomeCal
+            // 
+            this.incomeCal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.incomeCal.AutoSize = true;
+            this.incomeCal.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.incomeCal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.incomeCal.Location = new System.Drawing.Point(143, 3);
+            this.incomeCal.Name = "incomeCal";
+            this.incomeCal.Size = new System.Drawing.Size(54, 36);
+            this.incomeCal.TabIndex = 3;
+            this.incomeCal.Text = "0円";
+            this.incomeCal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 36);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "収入";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(3, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 36);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "支出";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(3, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 36);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "差引";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // outCal
+            // 
+            this.outCal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.outCal.AutoSize = true;
+            this.outCal.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.outCal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.outCal.Location = new System.Drawing.Point(143, 46);
+            this.outCal.Name = "outCal";
+            this.outCal.Size = new System.Drawing.Size(54, 36);
+            this.outCal.TabIndex = 4;
+            this.outCal.Text = "0円";
+            this.outCal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonEndCal
             // 
@@ -301,15 +418,6 @@
             this.buttonAddCal.UseVisualStyleBackColor = true;
             this.buttonAddCal.Click += new System.EventHandler(this.buttonAddCal_Click);
             // 
-            // debugLabel
-            // 
-            this.debugLabel.AutoSize = true;
-            this.debugLabel.Location = new System.Drawing.Point(220, 46);
-            this.debugLabel.Name = "debugLabel";
-            this.debugLabel.Size = new System.Drawing.Size(74, 18);
-            this.debugLabel.TabIndex = 2;
-            this.debugLabel.Text = "debugLabel";
-            // 
             // dgvCal
             // 
             this.dgvCal.AllowUserToAddRows = false;
@@ -329,6 +437,7 @@
             this.dgvCal.RowTemplate.Height = 21;
             this.dgvCal.Size = new System.Drawing.Size(444, 150);
             this.dgvCal.TabIndex = 1;
+            this.dgvCal.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvCal_CellPainting);
             // 
             // 日付
             // 
@@ -516,6 +625,8 @@
             this.calendarView.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCal)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
@@ -560,7 +671,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 金額DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備考DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dgvCal;
-        private System.Windows.Forms.Label debugLabel;
         public System.Windows.Forms.MonthCalendar monthCalendar1;
         private CategoryDataSet categoryDataSet1;
         private System.Windows.Forms.Button buttonEndCal;
@@ -572,6 +682,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 品名DataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 金額DataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備考DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Label titleLabelCal;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label totalCal;
+        private System.Windows.Forms.Label outCal;
+        private System.Windows.Forms.Label incomeCal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

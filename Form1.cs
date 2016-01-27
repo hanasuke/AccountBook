@@ -139,6 +139,38 @@ namespace AccountBook
             dgvTable.Rows.RemoveAt(currentRow);
         }
 
+        private void CalcCurrentMonthTotal()
+        {
+            int input = 0;
+            int output = 0;
+
+            for (int i = 0; i < dgvCal.RowCount; i++)
+            {
+                if (Convert.ToString(dgvCal[1, i].Value) == "給料")
+                {
+                    input += Convert.ToInt32(dgvCal[3, i].Value);
+                }
+                else
+                {
+                    output += Convert.ToInt32(dgvCal[3, i].Value);
+                }
+                incomeCal.Text = input + "円";
+                outCal.Text = output + "円";
+                if (input < output)
+                {
+                    totalCal.ForeColor = Color.Red;
+                }
+                totalCal.Text = input - output + "円";
+            }
+            //foreach (var i in dgvCal.Rows)
+            //{
+                //if (i.Cell[2].Values == "給料")
+                //{
+                //    input += (int)i.Cell[2].Values;
+                //}
+            //}
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             categoryDataSet._CategoryDataSet.AddCategoryDataSetRow("給料", "入金");
@@ -160,7 +192,7 @@ namespace AccountBook
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Account Bookファイル(*.abd)|*.abd";
+            ofd.Filter = "Account Bookファイル(*.abd)|*.abd|CSVファイル(*.csv)|*.csv";
             ofd.Title = "開くファイルを選択してください";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -177,7 +209,7 @@ namespace AccountBook
         private void renameSaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Account Bookファイル(*.abd)|*.abd";
+            sfd.Filter = "Account Bookファイル(*.abd)|*.abd|CSVファイル(*.csv)|*.csv";
             sfd.Title = "保存先を選択してください";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -189,7 +221,7 @@ namespace AccountBook
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
             DateTime selectedDate = monthCalendar1.SelectionRange.Start;
-            debugLabel.Text = selectedDate.ToString("yyyy/mm/dd");
+            //debugLabel.Text = selectedDate.ToString("yyyy/mm/dd");
             //moneyDataSet.sele
         }
 
@@ -237,6 +269,12 @@ namespace AccountBook
         {
 
             AddData(monthCalendar1.SelectionRange.Start);
+            CalcCurrentMonthTotal();
+        }
+
+        private void dgvCal_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            CalcCurrentMonthTotal();
         }
     }
 }
