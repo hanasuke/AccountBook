@@ -270,11 +270,11 @@
             // 
             this.titleLabelCal.AutoSize = true;
             this.titleLabelCal.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.titleLabelCal.Location = new System.Drawing.Point(298, 9);
+            this.titleLabelCal.Location = new System.Drawing.Point(258, 9);
             this.titleLabelCal.Name = "titleLabelCal";
-            this.titleLabelCal.Size = new System.Drawing.Size(107, 28);
+            this.titleLabelCal.Size = new System.Drawing.Size(179, 28);
             this.titleLabelCal.TabIndex = 21;
-            this.titleLabelCal.Text = "今月の収支";
+            this.titleLabelCal.Text = "0000年00月の収支";
             // 
             // tableLayoutPanel1
             // 
@@ -285,12 +285,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64F));
             this.tableLayoutPanel1.Controls.Add(this.totalCal, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.incomeCal, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.outCal, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(253, 40);
+            this.tableLayoutPanel1.Controls.Add(this.incomeCal, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(247, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -558,7 +558,6 @@
             this.dgvTable.Location = new System.Drawing.Point(-5, 0);
             this.dgvTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvTable.Name = "dgvTable";
-            this.dgvTable.ReadOnly = true;
             this.dgvTable.RowTemplate.Height = 21;
             this.dgvTable.Size = new System.Drawing.Size(475, 325);
             this.dgvTable.TabIndex = 11;

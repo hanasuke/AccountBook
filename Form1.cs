@@ -143,9 +143,17 @@ namespace AccountBook
         {
             int input = 0;
             int output = 0;
+            DateTime today = monthCalendar1.TodayDate;
+            DateTime currentMonthStart = new DateTime(today.Year, today.Month, 1);
+            DateTime currentMonthEnd = new DateTime(today.Year, today.Month, DateTime.DaysInMonth(today.Year, today.Month));
+            titleLabelCal.Text = currentMonthStart.Year + "年" + currentMonthStart.Month + "月の収支";
 
             for (int i = 0; i < dgvCal.RowCount; i++)
             {
+                if (Convert.ToDateTime(dgvCal[0, i].Value) > currentMonthEnd || Convert.ToDateTime(dgvCal[0, i].Value) < currentMonthStart)
+                {
+                    continue;
+                }
                 if (Convert.ToString(dgvCal[1, i].Value) == "給料")
                 {
                     input += Convert.ToInt32(dgvCal[3, i].Value);
