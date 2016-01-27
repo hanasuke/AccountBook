@@ -284,5 +284,27 @@ namespace AccountBook
         {
             CalcCurrentMonthTotal();
         }
+
+        private void searchButtonTable_Click(object sender, EventArgs e)
+        {
+            string searchWord = searchWordTable.Text;
+
+            for (int i = 0; i < dgvTable.RowCount; i++)
+            {
+                for (int j = 0; j < dgvTable.ColumnCount; j++)
+                {
+                    if ((Convert.ToString(dgvCal[j, i].Value)) == searchWord)
+                    {
+                        //dgvCal.Rows[j].Visible = true;
+                    }
+                    else
+                    {
+                        //dgvCal.Rows[j].Visible = false;
+                    }
+                }
+            }
+
+                Console.WriteLine(searchWord);
+        }
     }
 }

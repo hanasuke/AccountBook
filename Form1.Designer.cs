@@ -81,6 +81,8 @@
             this.金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備考DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataSet1 = new AccountBook.CategoryDataSet();
+            this.searchWordTable = new System.Windows.Forms.TextBox();
+            this.searchButtonTable = new System.Windows.Forms.Button();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moneyDataSet)).BeginInit();
@@ -484,6 +486,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.searchButtonTable);
+            this.tabPage2.Controls.Add(this.searchWordTable);
             this.tabPage2.Controls.Add(this.buttonEndTable);
             this.tabPage2.Controls.Add(this.buttonDeleteTable);
             this.tabPage2.Controls.Add(this.buttonChangeTable);
@@ -555,11 +559,11 @@
             this.金額DataGridViewTextBoxColumn,
             this.備考DataGridViewTextBoxColumn});
             this.dgvTable.DataSource = this.moneyDataTableBindingSource;
-            this.dgvTable.Location = new System.Drawing.Point(-5, 0);
+            this.dgvTable.Location = new System.Drawing.Point(-5, 29);
             this.dgvTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvTable.Name = "dgvTable";
             this.dgvTable.RowTemplate.Height = 21;
-            this.dgvTable.Size = new System.Drawing.Size(475, 325);
+            this.dgvTable.Size = new System.Drawing.Size(475, 296);
             this.dgvTable.TabIndex = 11;
             // 
             // 日付DataGridViewTextBoxColumn
@@ -602,6 +606,23 @@
             this.categoryDataSet1.DataSetName = "CategoryDataSet";
             this.categoryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // searchWordTable
+            // 
+            this.searchWordTable.Location = new System.Drawing.Point(332, 0);
+            this.searchWordTable.Name = "searchWordTable";
+            this.searchWordTable.Size = new System.Drawing.Size(138, 25);
+            this.searchWordTable.TabIndex = 16;
+            // 
+            // searchButtonTable
+            // 
+            this.searchButtonTable.Location = new System.Drawing.Point(267, 0);
+            this.searchButtonTable.Name = "searchButtonTable";
+            this.searchButtonTable.Size = new System.Drawing.Size(59, 25);
+            this.searchButtonTable.TabIndex = 17;
+            this.searchButtonTable.Text = "検索";
+            this.searchButtonTable.UseVisualStyleBackColor = true;
+            this.searchButtonTable.Click += new System.EventHandler(this.searchButtonTable_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
@@ -628,6 +649,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCal)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -689,6 +711,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button searchButtonTable;
+        private System.Windows.Forms.TextBox searchWordTable;
     }
 }
 
